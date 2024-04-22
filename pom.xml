@@ -40,7 +40,7 @@
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<applicationName>${application.name}</applicationName>
 						<environment>${anypoint.muletalks.env}</environment>
-						<vCores>${anypoint.muletalks.workertype}</vCores>
+						<vCores>${anypoint.muletalks.workersize}</vCores>
 						<replicas>${anypoint.muletalks.numberofworkers}</replicas>
 						<deploymentTimeout>${anypoint.deployment.timeout}</deploymentTimeout>
 						<secureProperties>

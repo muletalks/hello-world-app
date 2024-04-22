@@ -1,4 +1,4 @@
-# This is a parent workflow 
+# This is a parent workflow
 # It will trigger the reusable workflow and pass the input parameters to it
 
 name: Build, Test and Deploy to DEV
@@ -12,14 +12,14 @@ on:
   # Allows you to run this workflow manually from the Actions tab with input parameters
   workflow_dispatch:
     inputs:
-      workerType:
+      workerSize:
         description: 'Size of Mule Worker'
         required: true
         type: choice
         options:
-          - MICRO
-          - SMALL
-          - MEDIUM
+          - 0.1
+          - 0.2
+          - 0.5
         default: MICRO
       workerCount:
         description: 'Number of Mule Workers'
@@ -39,5 +39,5 @@ jobs:
     uses: muletalks/reusable-workflows/.github/workflows/dev-reusable-workflow.yml@master
     secrets: inherit
     with:
-      workerType: ${{ inputs.workerType }}
+      workerSize: ${{ inputs.workerSize }}
       workerCount: ${{ inputs.workerCount }}
