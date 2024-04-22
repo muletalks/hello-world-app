@@ -46,8 +46,8 @@
 						<secureProperties>
 							<mule.env>${mule.env}</mule.env>
 							<mule.key>${mule.key}</mule.key>
-							<anypoint.platform.client_secret>${anypoint.platform.muletalks.connectedapp.client_secret}</anypoint.platform.client_secret>
-							<anypoint.platform.client_id>${anypoint.platform.muletalks.connectedapp.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${anypoint.platform.muletalks.client_secret}</anypoint.platform.client_secret>
+							<anypoint.platform.client_id>${anypoint.platform.muletalks.client_id}</anypoint.platform.client_id>
 						</secureProperties>
 						<properties>
 							<anypoint.platform.base_uri>${anypoint.platform.base_uri}</anypoint.platform.base_uri>
