@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>92761c84-fca0-4643-b18d-a70327387b43</groupId>
-	<artifactId>mule-hello-world</artifactId>
-	<version>1.0.1</version>
+	<artifactId>mule-hello-world-app</artifactId>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>mule-hello-world</name>
+	<name>mule-hello-world-app</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
