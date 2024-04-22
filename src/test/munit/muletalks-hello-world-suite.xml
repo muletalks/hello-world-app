@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="muletalks-hello-world-suite.xml" />
+	<munit:test name="muletalks-hello-worldFlow-test" doc:id="7e541917-2a7b-4a67-8640-ffe12a7770aa" >
+		<munit:behavior >
+			<munit:set-event doc:name="Set Input" doc:id="4751af68-e71b-4fdb-85c1-af7891be1289" >
+				<munit:payload value="#[readUrl('classpath://muletalkshelloworldFlowtest/set-event_payload.dwl')]" encoding="UTF-8" />
+			</munit:set-event>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to muletalks-hello-worldFlow" doc:id="e1d3e209-7826-4a06-9b76-cd0bb000b59b" name="muletalks-hello-worldFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert payload" doc:id="87a2d872-e381-4d58-a619-eb2aec2b1d1d" message="The payload does not match">
+				<munit-tools:that ><![CDATA[#[%dw 2.0
+import muletalkshelloworldFlowtest::assert_expression_payload
+---
+assert_expression_payload::main({payload: payload, attributes: attributes, vars: vars})]]]></munit-tools:that>
+			</munit-tools:assert>
+			<munit-tools:verify-call doc:name="Verify Generate Message" doc:id="c8d78f8a-378e-4bf7-a068-b0e75fdaff5e" processor="ee:transform" times="1">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="84ade7da-f933-4af9-8def-faa7573d36d7" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+</mule>
