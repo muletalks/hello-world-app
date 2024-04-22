@@ -17,9 +17,9 @@ on:
         required: true
         type: choice
         options:
-          - 0.1
-          - 0.2
-          - 0.5
+          - '0.1'
+          - '0.2'
+          - '0.5'
         default: MICRO
       workerCount:
         description: 'Number of Mule Workers'
