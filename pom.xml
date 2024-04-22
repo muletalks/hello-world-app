@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.4.0</app.runtime>
-		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>4.1.0</mule.maven.plugin.version>
 		<munit.version>2.3.9</munit.version>
 	</properties>
 
@@ -32,22 +32,22 @@
 				<extensions>true</extensions>
 				<configuration>
 					<cloudhub2Deployment>
-						<uri>https://eu1.anypoint.platform.com</uri>
+						<uri>${anypoint.platform.base_uri}</uri>
 						<provider>MC</provider>
 						<muleVersion>${app.runtime}</muleVersion>
-						<connectedAppClientId>${anypoint.platform.connectedapp.client_id}</connectedAppClientId>
-						<connectedAppClientSecret>${anypoint.platform.connectedapp.client_secret}</connectedAppClientSecret>
+						<connectedAppClientId>${anypoint.platform.muletalks.connectedapp.client_id}</connectedAppClientId>
+						<connectedAppClientSecret>${anypoint.platform.muletalks.connectedapp.client_secret}</connectedAppClientSecret>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<applicationName>${application.name}</applicationName>
-						<environment>${anypoint.env}</environment>
-						<vCores>${anypoint.vcores}</vCores>
-						<replicas>${anypoint.replicas}</replicas>
+						<environment>${anypoint.muletalks.env}</environment>
+						<vCores>${anypoint.muletalks.workertype}</vCores>
+						<replicas>${anypoint.muletalks.numberofworkers}</replicas>
 						<deploymentTimeout>${anypoint.deployment.timeout}</deploymentTimeout>
 						<secureProperties>
 							<mule.env>${mule.env}</mule.env>
 							<mule.key>${mule.key}</mule.key>
-							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
-							<anypoint.platform.client_id>${anypoint.platform.client_id}</anypoint.platform.client_id>
+							<anypoint.platform.client_secret>${anypoint.platform.muletalks.connectedapp.client_secret}</anypoint.platform.client_secret>
+							<anypoint.platform.client_id>${anypoint.platform.muletalks.connectedapp.client_id}</anypoint.platform.client_id>
 						</secureProperties>
 						<properties>
 							<anypoint.platform.base_uri>${anypoint.platform.base_uri}</anypoint.platform.base_uri>
@@ -55,8 +55,8 @@
 							<anypoint.platform.config.analytics.agent.enabled>${anypoint.platform.analytics.agent.enabled}</anypoint.platform.config.analytics.agent.enabled>
 							<anypoint.platform.visualizer.layer>${api.layer}</anypoint.platform.visualizer.layer>
 						</properties>
-						<target>${anypoint.target}</target>
-						<businessGroup>${anypoint.bg}</businessGroup>
+						<target>${anypoint.muletalks.target}</target>
+						<businessGroup>${anypoint.muletalks.bg}</businessGroup>
 					</cloudhub2Deployment>
 					<classifier>---- select project type ----</classifier>
 				</configuration>
