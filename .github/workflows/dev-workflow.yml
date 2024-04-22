@@ -20,7 +20,7 @@ on:
           - '0.1'
           - '0.2'
           - '0.5'
-        default: MICRO
+        default: '0.1'
       workerCount:
         description: 'Number of Mule Workers'
         required: true
